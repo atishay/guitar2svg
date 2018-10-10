@@ -28,6 +28,11 @@ server.on('request', async function (req, res) {
     // Get the "viewport" of the page, as reported by the page.
     const dimensions = await page.evaluate((q) => {
         jtab.render(document.getElementById('jtab'), q);
+        let x = document.querySelector("svg");
+        x.setAttribute("viewBox", "0 0 " + x.clientWidth + " " + x.clientHeight);
+        x.style.height = "auto";
+        x.style.maxWidth = "100%";
+        x.classList.add('guitar');
         return document.getElementById('builder_0').innerHTML;
     }, search.q);
 
