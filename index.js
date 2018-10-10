@@ -29,7 +29,9 @@ server.on('request', async function (req, res) {
     const dimensions = await page.evaluate((q) => {
         jtab.render(document.getElementById('jtab'), q);
         let x = document.querySelector("svg");
-        x.setAttribute("viewBox", "0 0 " + x.clientWidth + " " + x.clientHeight);
+        let height = x.clientHeight + 5;
+        x.setAttribute("viewBox", "0 0 " + x.clientWidth + " " + height);
+        x.setAttribute("height", height);
         x.style.height = "auto";
         x.style.maxWidth = "100%";
         x.classList.add('guitar');
