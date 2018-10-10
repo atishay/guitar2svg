@@ -21,7 +21,7 @@ server.on('request', async function (req, res) {
     const search = querystring.parse(contents.search.slice(1));
     console.log(search.q);
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.goto("file://" +__dirname + "/index.html");
 
