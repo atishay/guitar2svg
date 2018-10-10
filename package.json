@@ -1,0 +1,20 @@
+{
+  "name": "guitar2svg",
+  "version": "1.0.0",
+  "description": "A utility to convert jtab guitar to svg for offline rendering",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "guitar",
+    "svg"
+  ],
+  "author": "Atishay Jain <contact@atishay.me>",
+  "license": "MIT",
+  "dependencies": {
+    "jtab": "^1.3.2",
+    "puppeteer": "^1.9.0"
+  }
+}
